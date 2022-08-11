@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html, body{
+        overflow-x: hidden;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .parent {
+        position: relative;
+      }
+      .top {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+        border-radius: 50% 50% 0 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: black;
+      }
+      
+      .bottom {
+        width: 130px;
+        height: 100px;
+        background: #1e0600;
+        position: absolute;
+        left: 50%;
+        top: 80px;
+        transform: translateX(-50%);
+        border-radius: 60px;
+      }
+      .top::after {
+        position: absolute;
+        left: 15px;
+        content: "";
+        width: 30px;
+        height: 10px;
+        border: 3px solid rgb(233, 54, 54);
+        border-radius: 25px;
+        z-index: -1;
+        transform: rotate(45deg);
+        top: 0;
+      }
+      .top::before {
+        position: absolute;
+        right: 15px;
+        content: "";
+        width: 30px;
+        height: 10px;
+        border: 3px solid rgb(233, 54, 54);
+        border-radius: 25px;
+        z-index: -1;
+        transform: rotate(-45deg);
+        top: 0;
+      }
+      .dot-1 {
+        width: 10px;
+        height: 20px;
+        background-color: #800101;
+        border-radius: 7px;
+        position: absolute;
+        left: 20px;
+        bottom: 30px;
+        transform: rotate(35deg);
+      }
+      .dot-2 {
+        width: 10px;
+        height: 20px;
+        background-color: #800101;
+        border-radius: 15px;
+        position: absolute;
+        right: 20px;
+        bottom: 30px;
+        transform: rotate(-35deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="top">
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <div class="bottom">
+        <span class="dot-1"></span>
+        <span class="dot-2"></span>
+      </div>
+    </div>
+  </body>
+</html>
